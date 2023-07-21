@@ -1,0 +1,101 @@
+# Nmap 7.94 scan initiated Fri Jul 21 22:30:56 2023 as: nmap -sS -Pn -n -sV -sC -vv -p8000,48153,135,49152,49154,3389,5357,139,445 -oN nmap_result.txt 10.10.175.3
+Nmap scan report for 10.10.175.3
+Host is up, received user-set (0.43s latency).
+Scanned at 2023-07-21 22:30:57 WIB for 117s
+
+PORT      STATE  SERVICE        REASON          VERSION
+135/tcp   open   msrpc          syn-ack ttl 125 Microsoft Windows RPC
+139/tcp   open   netbios-ssn    syn-ack ttl 125 Microsoft Windows netbios-ssn
+445/tcp   open   Eicrosof0      syn-ack ttl 125 Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)
+3389/tcp  open   ms-wbt-server? syn-ack ttl 125
+|_ssl-date: 2023-07-21T15:32:53+00:00; -1s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: DARK-PC
+|   NetBIOS_Domain_Name: DARK-PC
+|   NetBIOS_Computer_Name: DARK-PC
+|   DNS_Domain_Name: Dark-PC
+|   DNS_Computer_Name: Dark-PC
+|   Product_Version: 6.1.7601
+|_  System_Time: 2023-07-21T15:32:42+00:00
+| ssl-cert: Subject: commonName=Dark-PC
+| Issuer: commonName=Dark-PC
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2023-07-20T15:28:39
+| Not valid after:  2024-01-19T15:28:39
+| MD5:   9c1f:e99b:795f:cde4:ee60:c2de:95f8:fda7
+| SHA-1: f14f:2af7:657d:2c46:d978:36ea:1e14:d3b5:2b11:90bd
+| -----BEGIN CERTIFICATE-----
+| MIIC0jCCAbqgAwIBAgIQKZ3vKp552bZIwyNo+9QyZDANBgkqhkiG9w0BAQUFADAS
+| MRAwDgYDVQQDEwdEYXJrLVBDMB4XDTIzMDcyMDE1MjgzOVoXDTI0MDExOTE1Mjgz
+| OVowEjEQMA4GA1UEAxMHRGFyay1QQzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+| AQoCggEBAM0qN8QGWOi6t1WGGADH1jr50WmPyg9+J40Y7kTEKLnmQUuAX92k+sH2
+| 3BKJMHvo06xK2/lNPty2viKG9QL1eLQ4Irzjgc1Qrv9t98FqIRKCwHgzzXWEjRIn
+| bYNdW6r+Ca9DywWuz9yFE27S+foOXsqG2x/VsHd0PbKc+d0Q26uJWh4VrXgJLygP
+| dJszincDQq+xFOxGKVYW5xPoMn9vJj9TiGu/MougorS0KQTw8Ge4Nv/KeCuB14tb
+| 5pauvHrt0t9JLQc3AxfbJupxhefSp1sy/nLId0sc8yrtWXzAbHHUHXHjO/f7LJC0
+| XYeONxOeucioV+pP92fTwOKyA5EocCMCAwEAAaMkMCIwEwYDVR0lBAwwCgYIKwYB
+| BQUHAwEwCwYDVR0PBAQDAgQwMA0GCSqGSIb3DQEBBQUAA4IBAQCazxmRThMFkzom
+| 6tYBHGhQ+5Ho3+qIFpOfd1i6nkKDnsnhTkuwXBEOqv/g3p+EIkfY1bUx2nmf4WgJ
+| WyxUY6wlAYiw8Tbqz3C1KnO/r+u3d7bUX7UdoZGtQwI1VKLpTgWsORmPAzTs0ClD
+| f5iZEd+m3bNmJDwsqJGs4wKVHUIYWZcyAeGWI+HBJ2YZzd2ecLmmf8URRkn2ECkv
+| 3r49NykKwTzqln+ljN6tgAR0CqK/+aQt/zta/Nuv0R1KSVCHlApXB1F9LYFEnM5q
+| Sr0F6UnVvI+fytYIxf2+TH800lHkes1w/OHG3XEFfVTOkvZY71o3e3knjtE9g0aC
+| stxJsvjx
+|_-----END CERTIFICATE-----
+5357/tcp  open   http           syn-ack ttl 125 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Service Unavailable
+|_http-server-header: Microsoft-HTTPAPI/2.0
+8000/tcp  open   http           syn-ack ttl 125 Icecast streaming media server
+|_http-title: Site doesn't have a title (text/html).
+| http-methods: 
+|_  Supported Methods: GET
+48153/tcp closed unknown        reset ttl 125
+49152/tcp open   msrpc          syn-ack ttl 125 Microsoft Windows RPC
+49154/tcp open   msrpc          syn-ack ttl 125 Microsoft Windows RPC
+Service Info: Host: DARK-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   2:1:0: 
+|_    Message signing enabled but not required
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 49554/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 52155/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 12373/udp): CLEAN (Failed to receive data)
+|   Check 4 (port 20461/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| nbstat: NetBIOS name: DARK-PC, NetBIOS user: <unknown>, NetBIOS MAC: 02:6b:57:ff:b9:15 (unknown)
+| Names:
+|   DARK-PC<00>          Flags: <unique><active>
+|   WORKGROUP<00>        Flags: <group><active>
+|   DARK-PC<20>          Flags: <unique><active>
+|   WORKGROUP<1e>        Flags: <group><active>
+|   WORKGROUP<1d>        Flags: <unique><active>
+|   \x01\x02__MSBROWSE__\x02<01>  Flags: <group><active>
+| Statistics:
+|   02:6b:57:ff:b9:15:00:00:00:00:00:00:00:00:00:00:00
+|   00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+|_  00:00:00:00:00:00:00:00:00:00:00:00:00:00
+|_clock-skew: mean: 59m59s, deviation: 2h14m10s, median: 0s
+| smb-os-discovery: 
+|   OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
+|   OS CPE: cpe:/o:microsoft:windows_7::sp1:professional
+|   Computer name: Dark-PC
+|   NetBIOS computer name: DARK-PC\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2023-07-21T10:32:42-05:00
+| smb2-time: 
+|   date: 2023-07-21T15:32:42
+|_  start_date: 2023-07-21T15:28:38
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jul 21 22:32:54 2023 -- 1 IP address (1 host up) scanned in 118.10 seconds

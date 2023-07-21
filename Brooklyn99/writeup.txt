@@ -1,0 +1,10 @@
+user : Amy,Jake,Holt
+password : 987654321,fluffydog12@ninenine
+
+1. enumerasi dengan nmap 
+2. dapatkan username di port 21
+3. periksa  source code halaman web
+4. cracking ssh dengan username dengan rockyou.txt
+5. lakukan ssh
+6. privialge escalation denga sudo -l (less,nano)
+7. dapatkan user.txt dan root.txt

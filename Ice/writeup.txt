@@ -1,0 +1,11 @@
+1. scaaning port dengan nmap
+2. temukan layanan yang memiliki kerentanan dalam hal ini ,icecas dan eternalblue 
+3. kita menggunakan icecast 
+4. gunakan module berikut 
+    a. exploit/windows/http/icecast_header => untuk exploit dapatkan sesi meterpreter
+    b. post/multi/recon/local_exploit_suggester   => untuk post dapatkan saran untuk meningkatkan hak akses
+    c. windows/local/bypassuac_eventvwr => module untuk meningkatkan hak akses administratif
+5. load mimikatz
+7. kumpulkan credential dengan mimikatz
+
+note : windows/manage/enable_rdp => modul untuk mengaktifkan sesi RDP
