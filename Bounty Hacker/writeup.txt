@@ -1,0 +1,9 @@
+credential : lin:RedDr4gonSynd1cat3
+
+1. scanning port
+2. login anonymous ke ftp server dapatkan file nya
+3. brutoforce layanan ssh dengan file tersebut
+4. ssh ke server menggunakan credential yang didapatkan
+5. lakukan privilage escalation dengan sudo -l
+6. gunakan gtfobin untuk melihat cara melakukan privilage escalation
+7. dapatkan user.txt dan root.txt
